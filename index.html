@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mensaje Oculto</title>
 
 <style>
@@ -17,7 +18,8 @@ body {
   background: rgba(0,0,0,0.8);
   padding: 20px;
   border-radius: 15px;
-  width: 360px;
+  width: 90%;
+  max-width: 360px;
   margin: auto;
   box-shadow: 0 0 20px #b300ff;
 }
@@ -30,12 +32,14 @@ button {
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
 }
 
 input {
-  padding: 8px;
+  padding: 10px;
   border-radius: 5px;
   border: none;
+  width: 90%;
 }
 
 .oculto {
@@ -58,7 +62,6 @@ input {
   <p>Primero dime…</p>
   <p>¿Cuánto es 9 + 1?</p>
   <input id="r1">
-  <br>
   <button onclick="check1()">Continuar</button>
 </div>
 
@@ -68,7 +71,6 @@ input {
   <p>Pista:</p>
   <p>"No soy fuego… pero quemo cuando miras"</p>
   <input id="r2">
-  <br>
   <button onclick="check2()">Responder</button>
 </div>
 
@@ -84,9 +86,8 @@ input {
 <div id="a" class="oculto">
   <p>Hmm… obediente 👀</p>
   <p>Última prueba:</p>
-  <p>Escribe: "no debería estar aquí"</p>
+  <p>Escribe: no deberia estar aqui</p>
   <input id="r3">
-  <br>
   <button onclick="check3()">Confirmar</button>
 </div>
 
@@ -96,7 +97,6 @@ input {
   <p>Pista final:</p>
   <p>Empieza con "p" y termina con "o"</p>
   <input id="r4">
-  <br>
   <button onclick="check4()">Entrar</button>
 </div>
 
@@ -111,8 +111,8 @@ input {
   <br>
   <p>Y eso… me gusta.</p>
   <br>
-  <p>🎧 “No fue casualidad”</p>
-  <p>Solo diré eso.</p>
+  <p>💜</p>
+  <p>No fue casualidad.</p>
 </div>
 
 </div>
@@ -151,7 +151,7 @@ function caminoB(){
 
 function check3(){
   let r = document.getElementById("r3").value.toLowerCase();
-  if(r == "no debería estar aquí"){
+  if(r == "no deberia estar aqui"){
     document.getElementById("final").style.display = "block";
   } else {
     alert("Exacto... así debía ser.");
