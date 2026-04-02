@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mensaje Oculto</title>
+<title>Acceso Restringido</title>
 
 <style>
 body {
@@ -15,7 +15,7 @@ body {
 }
 
 .caja {
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
   padding: 20px;
   border-radius: 15px;
   width: 90%;
@@ -52,50 +52,51 @@ input {
 
 <div class="caja">
 
-<h2>📩 Mensaje no autorizado</h2>
-<p>Este archivo… no era para ti.</p>
+<h2>🔒 Acceso restringido</h2>
+<p>Si estás aquí… ya empezaste algo.</p>
 
-<button onclick="inicio()">Leer de todos modos</button>
+<button onclick="inicio()">Entrar</button>
 
 <!-- NIVEL 1 -->
 <div id="n1" class="oculto">
-  <p>Primero dime…</p>
-  <p>¿Cuánto es 9 + 1?</p>
+  <p>No cualquiera llega aquí.</p>
+  <p>Primero:</p>
+  <p>¿Cuánto es 8 + 2?</p>
   <input id="r1">
-  <button onclick="check1()">Continuar</button>
+  <button onclick="check1()">Seguir</button>
 </div>
 
 <!-- NIVEL 2 -->
 <div id="n2" class="oculto">
-  <p>Ok… entraste 😏</p>
-  <p>Pista:</p>
-  <p>"No soy fuego… pero quemo cuando miras"</p>
+  <p>Ok…</p>
+  <p>Ahora dime:</p>
+  <p>"No soy peligro… pero conmigo te metes en problemas"</p>
   <input id="r2">
   <button onclick="check2()">Responder</button>
 </div>
 
 <!-- NIVEL 3 -->
 <div id="n3" class="oculto">
-  <p>Ya casi…</p>
-  <p>Elige cómo seguir:</p>
-  <button onclick="caminoA()">Seguir reglas</button>
-  <button onclick="caminoB()">Romper reglas</button>
+  <p>Ya lo sabes entonces…</p>
+  <p>Elige:</p>
+  <button onclick="caminoA()">Alejarte</button>
+  <button onclick="caminoB()">Seguir</button>
 </div>
 
 <!-- CAMINO A -->
 <div id="a" class="oculto">
-  <p>Hmm… obediente 👀</p>
-  <p>Última prueba:</p>
-  <p>Escribe: no deberia estar aqui</p>
+  <p>Buena decisión…</p>
+  <p>pero ya es tarde.</p>
+  <p>Escribe: "ya caí"</p>
   <input id="r3">
-  <button onclick="check3()">Confirmar</button>
+  <button onclick="check3()">Aceptar</button>
 </div>
 
 <!-- CAMINO B -->
 <div id="b" class="oculto">
-  <p>Sabía que eras de ese tipo 😏</p>
-  <p>Pista final:</p>
-  <p>Empieza con "p" y termina con "o"</p>
+  <p>Sabía que no te ibas a ir 😏</p>
+  <p>Última clave:</p>
+  <p>Empieza con "r" y termina con "o"</p>
   <input id="r4">
   <button onclick="check4()">Entrar</button>
 </div>
@@ -103,16 +104,17 @@ input {
 <!-- FINAL -->
 <div id="final" class="oculto">
   <p>…</p>
-  <p>Al final sí entraste.</p>
-  <p>Y no sé si debería dejarte leer esto.</p>
+  <p>Te lo advertí.</p>
+  <p>Pero igual entraste.</p>
   <br>
-  <p>Pero bueno…</p>
-  <p>tampoco eres de los que obedecen mucho.</p>
+  <p>Y la verdad…</p>
+  <p>eso dice más de ti que de mí.</p>
   <br>
-  <p>Y eso… me gusta.</p>
+  <p>Porque tú sabías cómo soy.</p>
+  <p>Y aún así seguiste.</p>
   <br>
-  <p>💜</p>
-  <p>No fue casualidad.</p>
+  <p>😏</p>
+  <p>Ahora ya no te hagas.</p>
 </div>
 
 </div>
@@ -134,10 +136,10 @@ function check1(){
 
 function check2(){
   let r = document.getElementById("r2").value.toLowerCase();
-  if(r.includes("mirada") || r.includes("ojos")){
+  if(r.includes("problemas") || r.includes("tentación") || r.includes("tentacion")){
     document.getElementById("n3").style.display = "block";
   } else {
-    alert("Piénsalo mejor...");
+    alert("Tú sabes la respuesta...");
   }
 }
 
@@ -151,19 +153,19 @@ function caminoB(){
 
 function check3(){
   let r = document.getElementById("r3").value.toLowerCase();
-  if(r == "no deberia estar aqui"){
+  if(r == "ya caí" || r == "ya cai"){
     document.getElementById("final").style.display = "block";
   } else {
-    alert("Exacto... así debía ser.");
+    alert("Dilo bien...");
   }
 }
 
 function check4(){
   let r = document.getElementById("r4").value.toLowerCase();
-  if(r == "peligro"){
+  if(r == "riesgo"){
     document.getElementById("final").style.display = "block";
   } else {
-    alert("Sabes que no es esa...");
+    alert("Sabes que sí es...");
   }
 }
 
